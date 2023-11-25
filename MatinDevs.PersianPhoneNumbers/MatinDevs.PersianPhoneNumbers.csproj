@@ -4,6 +4,25 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>Persian Phone Numbers for .NET</Title>
+    <Authors>MatinDevs</Authors>
+    <Company>MatinDevs</Company>
+    <Description>The PersianPhone class in this C# code facilitates the manipulation and validation of Persian phone numbers. It includes methods for converting Persian digits to English equivalents, validating the format of phone numbers according to Persian mobile phone standards, and offering implicit conversion from a string to a PersianPhone object.</Description>
+    <Copyright>MIT License</Copyright>
+    <PackageProjectUrl>https://github.com/itsMatinDevs/MatinDevs.PersianPhoneNumbers</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/itsMatinDevs/MatinDevs.PersianPhoneNumbers</RepositoryUrl>
+    <PackageTags>persian,farsi</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
