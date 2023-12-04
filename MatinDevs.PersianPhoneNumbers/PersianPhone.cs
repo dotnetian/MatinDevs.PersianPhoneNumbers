@@ -29,7 +29,7 @@ public sealed class PersianPhone
         string englishPhoneNumber = ConvertToEnglish (phoneNumber);
 
         // Validate the format of the phone number
-        Value = IsValid (englishPhoneNumber) ? englishPhoneNumber : throw new ArgumentException ("Invalid phone number format.");
+        Value = PersianPhoneValidator.IsPersianPhoneValid (__, englishPhoneNumber) ? englishPhoneNumber : throw new ArgumentException ("Invalid phone number format.");
     }
 
     /// <summary>
@@ -55,20 +55,6 @@ public sealed class PersianPhone
     }
 
     /// <summary>
-    /// Validates the format of the phone number.
-    /// </summary>
-    /// <param name="phoneNumber">The input phone number in English digits.</param>
-    /// <returns>True if the format is valid; otherwise, false.</returns>
-    /// <remarks>
-    /// This method checks if the provided phone number starts with "09" and has a length of 11 digits,
-    /// indicating a valid Persian mobile phone number format.
-    /// </remarks>
-    private static bool IsValid (string phoneNumber)
-    {
-        return phoneNumber.StartsWith ("09") && phoneNumber.Length == 11;
-    }
-
-    /// <summary>
     /// Implicitly converts a string to a PersianPhone object.
     /// </summary>
     /// <param name="phoneNumber">The input string representing a Persian phone number.</param>
@@ -86,4 +72,24 @@ public sealed class PersianPhone
     /// This method overrides the ToString() method to provide the string representation of the Persian phone number.
     /// </remarks>
     public override string ToString () => Value;
+}
+
+/// <summary>
+/// Represents validation methods for persian phone numbers.
+/// </summary>
+public static class PersianPhoneValidator
+{
+    /// <summary>
+    /// Validates the format of the phone number.
+    /// </summary>
+    /// <param name="phoneNumber">The input phone number in English digits.</param>
+    /// <returns>True if the format is valid; otherwise, false.</returns>
+    /// <remarks>
+    /// This method checks if the provided phone number starts with "09" and has a length of 11 digits,
+    /// indicating a valid Persian mobile phone number format.
+    /// </remarks>
+    public static bool IsPersianPhoneValid (this string phoneNumber)
+    {
+        return phoneNumber.StartsWith ("09") && phoneNumber.Length == 11;
+    }
 }
