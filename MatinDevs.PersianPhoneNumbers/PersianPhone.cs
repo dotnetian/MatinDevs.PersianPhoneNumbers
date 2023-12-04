@@ -29,7 +29,7 @@ public sealed class PersianPhone
         string englishPhoneNumber = ConvertToEnglish (phoneNumber);
 
         // Validate the format of the phone number
-        Value = PersianPhoneValidator.IsPersianPhoneValid (__, englishPhoneNumber) ? englishPhoneNumber : throw new ArgumentException ("Invalid phone number format.");
+        Value = englishPhoneNumber.IsPersianPhoneValid () ? englishPhoneNumber : throw new ArgumentException ("Invalid phone number format.");
     }
 
     /// <summary>
